@@ -12,7 +12,67 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    
+
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+
+    <style type="text/css">
+
+        input {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+    input[type="radio"] {
+
+            opacity: 0;
+            width:0px;
+        }
+
+        label[for="easy"], 
+        label[for="normal"], 
+        label[for="hard"]{
+
+            display:block;
+            height:40px;
+            width:120px;
+            background-color:cyan;
+            color:#fff;
+        }
+
+        input:checked + label[for="easy"],
+        input:checked + label[for="normal"],
+        input:checked + label[for="hard"]{
+            background-color: orange;
+
+        }
+
+        label[for="aliens"]{
+            display:block;
+            height:40px;
+            width:120px;
+            background-color:cyan;
+        }
+
+        input:checked + label[for="aliens"]{
+            background-color: orange;
+
+        }
+
+
+        input[type=submit] {
+            background-color: yellowgreen;
+            border:0px;
+            color:#fff;
+            font-size:2em;
+        }
+
+
+    </style>
+
 </head>
 <body>
         <!--[if lt IE 8]>
@@ -21,19 +81,33 @@
 
             <!-- Add your site or application content here -->
 
+
+            
             <form action="index.html" method="get">
-            Level: <input type="text" name="level"><br>
-              Type: <input type="text" name="type"><br>
-              <input type="submit" value="Submit">
-          </form>
 
 
-          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-          <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-          <script src="js/plugins.js"></script>
-          <script src="js/main.js"></script>
+                        <input name="level" id="easy" type="radio" value="2">
+                        <label class="button" for="easy">easy</label>
+                        <input name="level" id="normal" type="radio" value="4">
+                        <label for="normal">normal</label>
+                        <input name="level" id="hard" type="radio" value="6">
+                        <label for="hard">hard</label>
 
-          <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+                <br>
 
-      </body>
-      </html>
+                <input name="type" id="aliens" type="radio" value="aliens">
+                        <label class="button" for="aliens">Aliens</label>
+
+
+                <input  type="submit" value="Play!">
+            </form>
+
+
+
+            <script src="js/plugins.js"></script>
+            <script src="js/main.js"></script>
+
+            <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+        </body>
+        </html>
